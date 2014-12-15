@@ -23,7 +23,7 @@ var sceneMin=0; // this is the closest low scene
 var sceneMax=0; // this is the closest high scene
 var orgList=[];
 //		Break down of array
-//			orgList[ITEM_NUMBER][ID_OF_DIV,DIV_X,DIV_Y,DIV_ROTATION,DIV_ALPHA];
+//			orgList[$(OBJECT)][ID_OF_DIV,DIV_X,DIV_Y,DIV_ROTATION,DIV_ALPHA];
 var orgListMin=[];
 var orgListMax=[];
 // Scene 1
@@ -44,7 +44,7 @@ orgList[i]=orgListMin;
 // Scene 2
 i++;
 orgListMin=[];
-orgListMin.push([400]); // ending pixel
+orgListMin.push([400]); // starting pixel
 orgListMin.push([oOrgObjA,400,600,0,50]);
 orgListMin.push([oOrgObjB,400,600,0,50]);
 orgListMin.push([oOrgObjC,400,600,0,50]);
@@ -114,7 +114,7 @@ function fnSceneNum(){
 		}
 	}
 	orgListMin=tempArr;
-	// make sure all of the items in listMax anre in ListMin
+	// make sure all of the items in listMax are in ListMin
 	for(i=1;i<orgListMax.length;i++){
 		isTest=0;
 		for(var j=1;j<orgListMin.length;j++){
